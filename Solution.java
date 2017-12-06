@@ -2,14 +2,20 @@ import java.util.ArrayList;
 import java.lang.Math;
 public class Solution {
     public ArrayList<Integer> FindNumbersWithSum(int[] array, int sum) {
-        int low = array.length / 2;
-        int high = array.length / 2 + 1;
-        int cur = array[low] + array[high];
+        int low = 0;
+        int high = 1;
         ArrayList result = new ArrayList<Integer>();
-        while(low < high) {
-	    System.out.println("");
-            System.out.println("test");
+        for (int i = 0 ; i < array.length ; i++) {
+            for (int j = 0 ; j < array.length ; j++) {
+                if (i == j) continue;
+                if (array[i] + array[j] == sum) {
+                    result.add(array[i]);
+                    result.add(array[j]);
+                    return result;
+                }
+            }
         }
+        return result;
     }
 
     public static void main(String[] args) {
