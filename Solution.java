@@ -7,9 +7,10 @@ public class Solution {
         int cur = array[low] + array[high];
         ArrayList result = new ArrayList<Integer>();
         while(low < high) {
-	    
-     }
-        
+	    System.out.println("");
+            System.out.println("test");
+        }
+    }
 
     public static void main(String[] args) {
         Solution s  = new Solution();
@@ -17,3 +18,4 @@ public class Solution {
         System.out.println(s.FindNumbersWithSum(array, 15));
     }
 }
+
