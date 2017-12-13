@@ -1,9 +1,15 @@
 public class DuplicatedArray{
 
     public int solution(int[] numbers, int length){
-        for(int i = 0; i < length - 1; i++){
-            for(int j = i + 1; j < length; j++){
-                if(numbers[i] == numbers[j]) return numbers[i];
+        int[] help = new int[length];
+        for(int i = 0; i < length; i++){
+            help[i] = -1;
+        }
+        for(int i = 0; i < length; i++){
+            if(help[numbers[i]] == numbers[i]){
+                return numbers[i];
+            }else{
+                help[numbers[i]] = numbers[i];
             }
         }
         return 0;
